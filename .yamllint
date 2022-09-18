@@ -17,6 +17,6 @@ rules:
     spaces: 2
     indent-sequences: false
   line-length:
-    max: 120
+    max: 130
   truthy:
     check-keys: false

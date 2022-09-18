@@ -1,8 +1,12 @@
 name: Reviewdog (actionlint)
 on:
+  push:
+    branches:
+    - 'main'
   pull_request:
     paths:
     - '.github/actions/setup-aqua/action.yaml'
+    - '.github/actions/setup-reviewdog/action.yaml'
     - '.github/dependency/actions-cache-version'
     - '.github/workflows/reviewdog-actionlint.yml'
     - '.aqua.yaml'
@@ -22,7 +26,10 @@ jobs:
       uses: actions/checkout@v3
     - name: Setup Aqua
       uses: ./.github/actions/setup-aqua
+    - name: Setup Reviewdog
+      id: reviewdog
+      uses: ./.github/actions/setup-reviewdog
     - name: Reviewdog
-      run: reviewdog -reporter 'github-pr-review' -runners 'actionlint' -diff 'git diff FETCH_HEAD'
+      run: reviewdog -runners 'actionlint' -reporter '${{ steps.reviewdog.outputs.reporter }}' -diff 'git diff FETCH_HEAD'
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
