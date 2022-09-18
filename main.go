@@ -8,6 +8,7 @@ import (
 	"github.com/urfave/cli/v2"
 
 	"github.com/takumin/gawsso/internal/command/completion"
+	"github.com/takumin/gawsso/internal/command/viewer"
 	"github.com/takumin/gawsso/internal/config"
 )
 
@@ -34,6 +35,7 @@ func main() {
 
 	cmds := []*cli.Command{
 		completion.NewCommands(cfg, flags),
+		viewer.NewCommands(cfg, flags),
 	}
 
 	app := &cli.App{

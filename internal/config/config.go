@@ -2,6 +2,8 @@ package config
 
 type Config struct {
 	LogLevel string
+
+	IdentityStoreID string
 }
 
 func NewConfig(opts ...Option) *Config {
