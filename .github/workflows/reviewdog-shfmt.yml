@@ -1,0 +1,28 @@
+name: Reviewdog (shfmt)
+on:
+  pull_request:
+    paths:
+    - '.github/actions/setup-aqua/action.yaml'
+    - '.github/dependency/actions-cache-version'
+    - '.github/workflows/reviewdog-shfmt.yml'
+    - '.aqua.yaml'
+    - '.reviewdog.yml'
+    - '**.sh'
+    - '**.bash'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup Aqua
+      uses: ./.github/actions/setup-aqua
+    - name: Reviewdog
+      run: reviewdog -reporter 'github-pr-review' -runners 'shfmt' -diff 'git diff FETCH_HEAD'
+      env:
+        REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
