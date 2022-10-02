@@ -1,10 +1,9 @@
 name: Reviewdog (shellcheck)
 on:
-  push:
-    branches:
-    - 'main'
+  workflow_call:
   pull_request:
     paths:
+    - '.github/actions/setup-go/action.yaml'
     - '.github/actions/setup-aqua/action.yaml'
     - '.github/actions/setup-reviewdog/action.yaml'
     - '.github/dependency/actions-cache-version'
@@ -14,6 +13,7 @@ on:
     - '**.sh'
     - '**.bash'
 permissions:
+  checks: write
   contents: read
   pull-requests: write
 jobs:
@@ -24,6 +24,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+    - name: Setup Go
+      uses: ./.github/actions/setup-go
     - name: Setup Aqua
       uses: ./.github/actions/setup-aqua
     - name: Setup Reviewdog
