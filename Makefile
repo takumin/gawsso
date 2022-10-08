@@ -17,7 +17,7 @@ LDFLAGS          := -s -w -buildid= $(LDFLAGS_APPNAME) $(LDFLAGS_VERSION) $(LDFL
 BUILDFLAGS       := -trimpath -ldflags '$(LDFLAGS)'
 
 .PHONY: all
-all: clean tools generate fmt vet sec lint test build
+all: clean tools generate fmt vet sec vuln lint test build
 
 .PHONY: docs
 docs:
@@ -47,13 +47,17 @@ vet:
 sec:
 	gosec -quiet -fmt golint ./...
 
+.PHONY: vuln
+vuln:
+	trivy fs -q -s HIGH,CRITICAL --security-checks vuln,config,secret,license .
+
 .PHONY: lint
 lint:
 	staticcheck ./...
 
 .PHONY: test
 test:
-	go test ./...
+	CGO_ENABLED=0 go test ./...
 
 .PHONY: build
 build: bin/$(BINNAME)
