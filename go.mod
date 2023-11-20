@@ -3,7 +3,7 @@ module github.com/takumin/gawsso
 go 1.19
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.23.0
+	github.com/aws/aws-sdk-go-v2 v1.23.1
 	github.com/aws/aws-sdk-go-v2/config v1.25.3
 	github.com/aws/aws-sdk-go-v2/service/identitystore v1.16.15
 	github.com/urfave/cli/v2 v2.25.7
