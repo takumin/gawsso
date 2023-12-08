@@ -12,8 +12,8 @@ github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.5.9 h1:N94sVhRACtXyVcjXxrw
 github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.5.9/go.mod h1:hqamLz7g1/4EJP+GH5NBhcUMLjW+gKLQabgyz6/7WAU=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.7.1 h1:uR9lXYjdPX0xY+NhvaJ4dD8rpSRz5VY81ccIIoNG+lw=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.7.1/go.mod h1:6fQQgfuGmw8Al/3M2IgIllycxV7ZW7WCdVSqfBeUiCY=
-github.com/aws/aws-sdk-go-v2/service/identitystore v1.21.4 h1:ftKBsHrPfqd3FEVUz2kRIxFI6LkA2O4ofVnidjnXMjw=
-github.com/aws/aws-sdk-go-v2/service/identitystore v1.21.4/go.mod h1:vs4IYQdGHOLq6DsPfSuoADmRzr/AeWIk8m50XBnwN/o=
+github.com/aws/aws-sdk-go-v2/service/identitystore v1.21.5 h1:x93yL/0ey4Y/HEBSsqcLNQDDeIVRLOdziLMg3+YM/F8=
+github.com/aws/aws-sdk-go-v2/service/identitystore v1.21.5/go.mod h1:vs4IYQdGHOLq6DsPfSuoADmRzr/AeWIk8m50XBnwN/o=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.10.4 h1:/b31bi3YVNlkzkBrm9LfpaKoaYZUxIAj4sHfOTmLfqw=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.10.4/go.mod h1:2aGXHFmbInwgP9ZfpmdIfOELL79zhdNYNmReK8qDfdQ=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.10.9 h1:Nf2sHxjMJR8CSImIVCONRi4g0Su3J+TSTbS7G0pUeMU=
