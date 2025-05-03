@@ -70,7 +70,7 @@ install: build
 
 .PHONY: snapshot
 snapshot:
-	goreleaser release --rm-dist --snapshot
+	goreleaser release --snapshot --clean
 
 .PHONY: release
 release:
