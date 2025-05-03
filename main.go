@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/urfave/cli/v2"
+	"github.com/urfave/cli/v3"
 
 	"github.com/takumin/gawsso/internal/command/completion"
 	"github.com/takumin/gawsso/internal/command/viewer"
