@@ -1,10 +1,11 @@
 package viewer
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 
-	"github.com/urfave/cli/v2"
+	"github.com/urfave/cli/v3"
 
 	"github.com/takumin/gawsso/internal/awsso"
 	"github.com/takumin/gawsso/internal/config"
@@ -16,7 +17,7 @@ func NewCommands(cfg *config.Config, flags []cli.Flag) *cli.Command {
 			Name:        "identity-store-id",
 			Aliases:     []string{"id"},
 			Usage:       "identity store id",
-			EnvVars:     []string{"IDENTITY_STORE_ID"},
+			Sources:     cli.EnvVars("IDENTITY_STORE_ID"),
 			Value:       cfg.IdentityStoreID,
 			Destination: &cfg.IdentityStoreID,
 		},
@@ -30,22 +31,22 @@ func NewCommands(cfg *config.Config, flags []cli.Flag) *cli.Command {
 	}
 }
 
-func action(cfg *config.Config) func(ctx *cli.Context) error {
-	return func(ctx *cli.Context) error {
-		store, err := awsso.NewIdentityStore(ctx.Context, cfg.IdentityStoreID)
+func action(cfg *config.Config) func(ctx context.Context, cmd *cli.Command) error {
+	return func(ctx context.Context, cmd *cli.Command) error {
+		store, err := awsso.NewIdentityStore(ctx, cfg.IdentityStoreID)
 		if err != nil {
 			return err
 		}
 
-		if err := store.GetUsers(ctx.Context); err != nil {
+		if err := store.GetUsers(ctx); err != nil {
 			return err
 		}
 
-		if err := store.GetGroups(ctx.Context); err != nil {
+		if err := store.GetGroups(ctx); err != nil {
 			return err
 		}
 
-		if err := store.GetMembers(ctx.Context); err != nil {
+		if err := store.GetMembers(ctx); err != nil {
 			return err
 		}
 
