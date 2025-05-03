@@ -16,3 +16,4 @@ packages:
 - name: rust-lang/mdBook@v0.4.48
 - name: takumin/gjson@v0.0.3
 - name: aquasecurity/trivy@v0.62.0
+- name: editorconfig-checker/editorconfig-checker@v3.2.1
