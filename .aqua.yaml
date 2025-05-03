@@ -7,7 +7,7 @@ registries:
 
 packages:
 - name: dominikh/go-tools/staticcheck@2025.1.1
-- name: goreleaser/goreleaser@v1.26.2
+- name: goreleaser/goreleaser@v2.9.0
 - name: securego/gosec@v2.22.3
 - name: reviewdog/reviewdog@v0.20.3
 - name: mvdan/sh@v3.11.0
