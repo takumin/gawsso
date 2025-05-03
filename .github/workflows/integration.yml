@@ -1,3 +1,4 @@
+---
 name: CI
 on:
   push:
@@ -22,6 +23,9 @@ jobs:
   reviewdog-gofmt:
     name: Reviewdog (gofmt)
     uses: ./.github/workflows/reviewdog-gofmt.yml
+  reviewdog-golangci-lint:
+    name: Reviewdog (golangci-lint)
+    uses: ./.github/workflows/reviewdog-golangci-lint.yml
   reviewdog-gosec:
     name: Reviewdog (gosec)
     uses: ./.github/workflows/reviewdog-gosec.yml
@@ -34,9 +38,6 @@ jobs:
   reviewdog-shfmt:
     name: Reviewdog (shfmt)
     uses: ./.github/workflows/reviewdog-shfmt.yml
-  reviewdog-staticcheck:
-    name: Reviewdog (staticcheck)
-    uses: ./.github/workflows/reviewdog-staticcheck.yml
   reviewdog-yamllint:
     name: Reviewdog (yamllint)
     uses: ./.github/workflows/reviewdog-yamllint.yml
