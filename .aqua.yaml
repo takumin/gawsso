@@ -16,5 +16,5 @@ packages:
 - name: rhysd/actionlint@v1.7.10
 - name: rust-lang/mdBook@v0.5.2
 - name: takumin/gjson@v0.0.3
-- name: aquasecurity/trivy@v0.68.2
+- name: aquasecurity/trivy@v0.69.0
 - name: editorconfig-checker/editorconfig-checker@v3.6.1
