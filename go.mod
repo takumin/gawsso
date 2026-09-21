@@ -5,7 +5,7 @@ go 1.27.1
 require (
 	github.com/aws/aws-sdk-go-v2 v1.47.0
 	github.com/aws/aws-sdk-go-v2/config v1.33.5
-	github.com/aws/aws-sdk-go-v2/service/identitystore v1.44.0
+	github.com/aws/aws-sdk-go-v2/service/identitystore v1.45.0
 	github.com/urfave/cli/v3 v3.13.0
 )
 
